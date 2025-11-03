@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💧 Simulação de Reuso Industrial</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="app-container">
+    <h1 class="main-title">💧 Dashboard de Reuso Industrial</h1>
+
+    <div class="selection-and-info">
+        <div class="filter-selection-area">
+            <label for="filtro"><i class="fas fa-cogs"></i> Selecione o Processo de Filtração:</label>
+            <select id="filtro"></select>
+        </div>
+
+        <div class="info-box" id="info-box">
+            <h3 id="info-title">Selecione um filtro</h3>
+            <p id="info-description">A descrição do filtro aparecerá aqui.</p>
+            <strong><i class="fas fa-industry"></i> Usado por:</strong>
+            <p id="info-examples">Exemplos de indústrias aparecerão aqui.</p>
+        </div>
+    </div>
+
+    <div class="industrial-diagram">
+
+        <div class="tank-wrapper">
+            <span class="tank-label">Tanque 1 (Efluente Bruto)</span>
+            <div class="tank" id="tanque1">
+                <div class="water water-dirty" id="agua1">
+                    <span class="percentage-label" id="nivel1">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pipe"></div>
+
+        <div class="filtration-unit">
+            <i class="fas fa-filter"></i>
+            <span>UNIDADE DE FILTRAGEM</span>
+            <div class="arrows">
+                <i class="fas fa-long-arrow-alt-right pipe-arrow"></i>
+            </div>
+        </div>
+
+        <div class="pipe"></div>
+
+        <div class="tank-wrapper">
+            <span class="tank-label">Tanque 2 (Água de Reuso)</span>
+            <div class="tank" id="tanque2">
+                <div class="water" id="agua2">
+                    <span class="percentage-label" id="nivel2">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-area">
+        Status: <span id="statusMessage">Parado.</span>
+    </div>
+
+    <div class="controls">
+        <button id="iniciar" class="control-btn primary"><i class="fas fa-play"></i> Iniciar</button>
+        <button id="reiniciar" class="control-btn danger"><i class="fas fa-redo"></i> Reiniciar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
